@@ -14,12 +14,20 @@ body{
 }
 :root{--gold:#d4af37}
 
-/* HERO */
+/* HERO (FIXED - NO STRETCH) */
 .hero{
   width:100%;
   height:320px;
-  background:url('https://raw.githubusercontent.com/allroundadvert/HENEX-MULTI-CONCEPT-ENTERPRISE-/2e25ef74f729f1233f8231b8f251ed17712464a1/.github/workflows/1775401719009.png') center/cover no-repeat;
+  background:#000;
+  display:flex;
+  justify-content:center;
+  align-items:center;
   border-bottom:4px solid var(--gold);
+}
+.hero img{
+  max-width:100%;
+  max-height:100%;
+  object-fit:contain;
 }
 
 /* INFO */
@@ -42,32 +50,28 @@ body{
   height:240px;
   object-fit:cover;
   border:2px solid rgba(212,175,55,.6);
-  box-shadow:0 0 12px rgba(212,175,55,.25);
 }
 
-/* MOVING IMAGES */
+/* MOVING IMAGES (FIXED) */
 .moving-wrap{
   overflow:hidden;
   max-width:1100px;
   margin:40px auto;
-  border-top:1px solid rgba(212,175,55,.4);
-  border-bottom:1px solid rgba(212,175,55,.4);
 }
 .moving-track{
   display:flex;
-  animation:slide 18s ease-in-out infinite alternate;
+  width:200%;
+  animation:slide 12s linear infinite alternate;
 }
 .moving-track img{
-  width:50vw;
-  max-width:520px;
+  width:50%;
   height:260px;
   object-fit:cover;
-  margin:10px;
-  border:2px solid var(--gold);
 }
+
 @keyframes slide{
   from{transform:translateX(0)}
-  to{transform:translateX(-40%)}
+  to{transform:translateX(-50%)}
 }
 
 /* FORM */
@@ -76,19 +80,10 @@ body{
   margin:50px auto;
   padding:30px;
   border:1px solid rgba(212,175,55,.5);
-  background:#050505;
 }
-.form-box h2{
-  color:var(--gold);
-  text-align:center;
-}
+.form-box h2{color:var(--gold);text-align:center;}
 
-label{
-  display:block;
-  margin-top:15px;
-  font-weight:600;
-}
-
+label{display:block;margin-top:15px;}
 input,textarea{
   width:100%;
   padding:12px;
@@ -103,13 +98,11 @@ input,textarea{
   display:grid;
   grid-template-columns:repeat(2,1fr);
   gap:10px;
-  margin-top:10px;
 }
 .checkbox-grid label{
   background:#111;
   padding:10px;
   border:1px solid #333;
-  cursor:pointer;
 }
 
 /* BUTTON */
@@ -119,50 +112,40 @@ button{
   padding:16px;
   background:linear-gradient(90deg,#d4af37,#f1d27a);
   border:none;
-  font-size:18px;
-  font-weight:800;
-  cursor:pointer;
 }
 
 /* MAP */
-.map iframe{
-  width:100%;
-  height:350px;
-  border:2px solid rgba(212,175,55,.4);
-}
+.map iframe{width:100%;height:350px;}
 
-/* FLOATING BUTTONS */
+/* FLOATING */
 .whatsapp,.call{
   position:fixed;
   right:18px;
-  padding:14px 18px;
+  padding:14px;
   border-radius:40px;
   color:#fff;
   text-decoration:none;
-  font-weight:700;
 }
 .whatsapp{bottom:90px;background:#25d366}
 .call{bottom:30px;background:#2563eb}
 
-footer{
-  background:#000;
-  text-align:center;
-  padding:20px;
-  color:#aaa;
-}
+footer{text-align:center;padding:20px;background:#000;}
 </style>
 </head>
 
 <body>
 
-<div class="hero"></div>
+<!-- HERO FIXED -->
+<div class="hero">
+<img src="https://raw.githubusercontent.com/allroundadvert/HENEX-MULTI-CONCEPT-ENTERPRISE-/2e25ef74f729f1233f8231b8f251ed17712464a1/.github/workflows/1775401719009.png">
+</div>
 
 <div class="info">
 <h2>HENEX MULTI CONCEPT ENTERPRISE</h2>
-<p>Specialized in high quality security doors of all types, Accessories, Promote locks for doors, Quality POP materials and Plaster board.</p>
+<p>Specialized in high quality security doors of all types, Accessories, Promote locks, POP materials and Plaster board.</p>
 </div>
 
-<!-- FULL GALLERY RESTORED -->
+<!-- GALLERY -->
 <div class="gallery">
 <img src="https://raw.githubusercontent.com/allroundadvert/IKEH-IKEH-DOORS-/c8cc3ec9be3e6d818bc15545463c84549b80dcaf/.github/workflows/IMG-20260121-WA0031.jpg">
 <img src="https://raw.githubusercontent.com/allroundadvert/IKEH-IKEH-DOORS-/c8cc3ec9be3e6d818bc15545463c84549b80dcaf/.github/workflows/IMG-20260121-WA0032.jpg">
@@ -178,11 +161,11 @@ footer{
 <img src="https://raw.githubusercontent.com/allroundadvert/IKEH-IKEH-DOORS-/c8cc3ec9be3e6d818bc15545463c84549b80dcaf/.github/workflows/IMG-20260121-WA0045.jpg">
 </div>
 
-<!-- MOVING IMAGES RESTORED -->
+<!-- MOVING (NOW FIRST TWO IMAGES) -->
 <div class="moving-wrap">
 <div class="moving-track">
-<img src="https://raw.githubusercontent.com/allroundadvert/IKEH-IKEH-DOORS-/c8cc3ec9be3e6d818bc15545463c84549b80dcaf/.github/workflows/IMG-20260121-WA0035.jpg">
-<img src="https://raw.githubusercontent.com/allroundadvert/IKEH-IKEH-DOORS-/c8cc3ec9be3e6d818bc15545463c84549b80dcaf/.github/workflows/IMG-20260121-WA0036.jpg">
+<img src="https://raw.githubusercontent.com/allroundadvert/IKEH-IKEH-DOORS-/c8cc3ec9be3e6d818bc15545463c84549b80dcaf/.github/workflows/IMG-20260121-WA0031.jpg">
+<img src="https://raw.githubusercontent.com/allroundadvert/IKEH-IKEH-DOORS-/c8cc3ec9be3e6d818bc15545463c84549b80dcaf/.github/workflows/IMG-20260121-WA0032.jpg">
 </div>
 </div>
 
@@ -191,10 +174,9 @@ footer{
 <iframe src="https://www.google.com/maps?q=57+Forestry+Road+Benin+City+Edo+State&output=embed"></iframe>
 </div>
 
-<!-- FORM WITH CLICKABLE ITEMS -->
+<!-- FORM -->
 <div class="form-box">
 <h2>Booking & Order Form</h2>
-<form onsubmit="send();return false;">
 
 <label>Customer Name</label>
 <input id="customerName">
@@ -220,8 +202,7 @@ footer{
 <label>Customer Address</label>
 <input id="customerAddress">
 
-<button>Submit via WhatsApp</button>
-</form>
+<button onclick="send()">Submit via WhatsApp</button>
 </div>
 
 <footer>© 2026 HENEX MULTI CONCEPT ENTERPRISE</footer>
@@ -231,22 +212,17 @@ footer{
 
 <script>
 function send(){
-  const name=document.getElementById("customerName").value;
-  const phone=document.getElementById("customerPhone").value;
-  const specs=document.getElementById("specifications").value;
-  const address=document.getElementById("customerAddress").value;
-
   let selected=[];
   document.querySelectorAll('input[type="checkbox"]:checked')
-    .forEach(el=>selected.push(el.value));
+  .forEach(el=>selected.push(el.value));
 
-  const msg=`Name:${name}
-Phone:${phone}
+  const msg=`Name:${customerName.value}
+Phone:${customerPhone.value}
 Products:${selected.join(", ")}
-Specifications:${specs}
-Address:${address}`;
+Specs:${specifications.value}
+Address:${customerAddress.value}`;
 
-  window.open("https://wa.me/2348060984678?text="+encodeURIComponent(msg), "_blank");
+  window.open("https://wa.me/2348060984678?text="+encodeURIComponent(msg));
 }
 </script>
 
