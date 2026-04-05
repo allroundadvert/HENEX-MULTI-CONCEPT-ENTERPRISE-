@@ -18,7 +18,7 @@ body{
 .hero{
   width:100%;
   height:320px;
-  background:url('https://raw.githubusercontent.com/allroundadvert/IKEH-IKEH-DOORS-/9fa2858be11307f390e137948ab9a366568fd4c7/.github/workflows/1772529239762.png') center/cover no-repeat;
+  background:url('https://raw.githubusercontent.com/allroundadvert/HENEX-MULTI-CONCEPT-ENTERPRISE-/2e25ef74f729f1233f8231b8f251ed17712464a1/.github/workflows/1775401719009.png') center/cover no-repeat;
   border-bottom:4px solid var(--gold);
 }
 
@@ -82,12 +82,14 @@ body{
   color:var(--gold);
   text-align:center;
 }
+
 label{
   display:block;
   margin-top:15px;
   font-weight:600;
 }
-input,select,textarea{
+
+input,textarea{
   width:100%;
   padding:12px;
   margin-top:6px;
@@ -95,6 +97,22 @@ input,select,textarea{
   border:1px solid #333;
   color:#fff;
 }
+
+/* CHECKBOX GRID */
+.checkbox-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+  margin-top:10px;
+}
+.checkbox-grid label{
+  background:#111;
+  padding:10px;
+  border:1px solid #333;
+  cursor:pointer;
+}
+
+/* BUTTON */
 button{
   margin-top:25px;
   width:100%;
@@ -144,7 +162,7 @@ footer{
 <p>Specialized in high quality security doors of all types, Accessories, Promote locks for doors, Quality POP materials and Plaster board.</p>
 </div>
 
-<!-- GALLERY -->
+<!-- FULL GALLERY RESTORED -->
 <div class="gallery">
 <img src="https://raw.githubusercontent.com/allroundadvert/IKEH-IKEH-DOORS-/c8cc3ec9be3e6d818bc15545463c84549b80dcaf/.github/workflows/IMG-20260121-WA0031.jpg">
 <img src="https://raw.githubusercontent.com/allroundadvert/IKEH-IKEH-DOORS-/c8cc3ec9be3e6d818bc15545463c84549b80dcaf/.github/workflows/IMG-20260121-WA0032.jpg">
@@ -160,7 +178,7 @@ footer{
 <img src="https://raw.githubusercontent.com/allroundadvert/IKEH-IKEH-DOORS-/c8cc3ec9be3e6d818bc15545463c84549b80dcaf/.github/workflows/IMG-20260121-WA0045.jpg">
 </div>
 
-<!-- MOVING IMAGES -->
+<!-- MOVING IMAGES RESTORED -->
 <div class="moving-wrap">
 <div class="moving-track">
 <img src="https://raw.githubusercontent.com/allroundadvert/IKEH-IKEH-DOORS-/c8cc3ec9be3e6d818bc15545463c84549b80dcaf/.github/workflows/IMG-20260121-WA0035.jpg">
@@ -173,7 +191,7 @@ footer{
 <iframe src="https://www.google.com/maps?q=57+Forestry+Road+Benin+City+Edo+State&output=embed"></iframe>
 </div>
 
-<!-- FORM -->
+<!-- FORM WITH CLICKABLE ITEMS -->
 <div class="form-box">
 <h2>Booking & Order Form</h2>
 <form onsubmit="send();return false;">
@@ -184,13 +202,17 @@ footer{
 <label>Phone Number</label>
 <input id="customerPhone">
 
-<label>Door Type</label>
-<select id="door">
-<option>Security Door</option>
-<option>Glass Door</option>
-<option>Wooden Door</option>
-<option>Other</option>
-</select>
+<label>Select Products</label>
+<div class="checkbox-grid">
+<label><input type="checkbox" value="Italian Door"> Italian Door</label>
+<label><input type="checkbox" value="Turkey Door"> Turkey Door</label>
+<label><input type="checkbox" value="Israeli Doors"> Israeli Doors</label>
+<label><input type="checkbox" value="China Doors"> China Doors</label>
+<label><input type="checkbox" value="Accessories"> Accessories</label>
+<label><input type="checkbox" value="Promote Locks"> Promote Locks</label>
+<label><input type="checkbox" value="POP Materials"> POP Materials</label>
+<label><input type="checkbox" value="Plaster Board"> Plaster Board</label>
+</div>
 
 <label>Specifications</label>
 <textarea id="specifications"></textarea>
@@ -211,17 +233,20 @@ footer{
 function send(){
   const name=document.getElementById("customerName").value;
   const phone=document.getElementById("customerPhone").value;
-  const door=document.getElementById("door").value;
   const specs=document.getElementById("specifications").value;
   const address=document.getElementById("customerAddress").value;
 
+  let selected=[];
+  document.querySelectorAll('input[type="checkbox"]:checked')
+    .forEach(el=>selected.push(el.value));
+
   const msg=`Name:${name}
 Phone:${phone}
-Door:${door}
+Products:${selected.join(", ")}
 Specifications:${specs}
 Address:${address}`;
 
-  window.open("https://wa.me/2348060984678?text="+encodeURIComponent(msg));
+  window.open("https://wa.me/2348060984678?text="+encodeURIComponent(msg), "_blank");
 }
 </script>
 
